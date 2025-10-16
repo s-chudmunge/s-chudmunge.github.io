@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Majorana Zero Modes - Sankalp Chudmunge</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: white;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .main-content {
+            background: white;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        .blog-container {
+            width: 100%;
+            padding: 3rem 8rem;
+            max-width: none;
+        }
+        
+        .blog-header-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .blog-post-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #242424;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            color: #6B6B6B;
+            font-size: 0.9rem;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #2c5aa0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .meta-separator {
+            color: #E6E6E6;
+        }
+        
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: none;
+            border: none;
+            color: #757575;
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .action-btn:hover {
+            background: #f8f8f8;
+        }
+        
+        .blog-content {
+            line-height: 1.7;
+            font-size: 1.1rem;
+            color: #242424;
+            font-weight: 400;
+            columns: 2;
+            column-gap: 4rem;
+            column-rule: 1px solid #f0f0f0;
+        }
+        
+        .blog-content h2 {
+            column-span: all;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #242424;
+            margin: 3rem 0 1.5rem 0;
+            line-height: 1.3;
+            break-after: avoid;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #242424;
+            margin: 2rem 0 1rem 0;
+            line-height: 1.3;
+            break-after: avoid;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.8rem;
+            break-inside: avoid;
+        }
+        
+        .blog-content ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            break-inside: avoid;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .equation {
+            background: #F8F9FA;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 1rem;
+            color: #242424;
+            text-align: center;
+            border: 1px solid #E6E6E6;
+            column-span: all;
+            break-inside: avoid;
+        }
+        
+        .code-block {
+            background: #F8F9FA;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9rem;
+            color: #242424;
+            overflow-x: auto;
+            border: 1px solid #E6E6E6;
+            column-span: all;
+            break-inside: avoid;
+        }
+        
+        .back-to-blog {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E6E6E6;
+            column-span: all;
+        }
+        
+        .back-link {
+            color: #6B6B6B;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .back-link:hover {
+            color: #242424;
+        }
+        
+        @media (max-width: 1200px) {
+            .blog-container {
+                padding: 2rem 4rem;
+            }
+            
+            .blog-content {
+                columns: 1;
+                column-rule: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 1rem 2rem;
+            }
+            
+            .blog-post-title {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                font-size: 1rem;
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Sankalp Chudmunge</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="research.html" class="nav-link">Research</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="publications.html" class="nav-link">Publications and talks</a>
+                    <a href="projects.html" class="nav-link">Computational Projects</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="blog-container">
+            <div class="blog-header-section">
+                <h1 class="blog-post-title">Understanding Majorana Zero Modes: A Computational Perspective</h1>
+                
+                <div class="blog-post-meta">
+                    <div class="author-info">
+                        <div class="author-avatar">SC</div>
+                        <span>Sankalp Chudmunge</span>
+                    </div>
+                    <span class="meta-separator">·</span>
+                    <span>Oct 15, 2025</span>
+                    <span class="meta-separator">·</span>
+                    <span>8 min read</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn">
+                        <span>👍</span>
+                        <span>Like</span>
+                    </button>
+                    <button class="action-btn">
+                        <span>💬</span>
+                        <span>Discuss</span>
+                    </button>
+                    <button class="action-btn">
+                        <span>🔖</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="blog-content">
+                <p>Content coming soon...</p>
+            </div>
+
+                <div class="back-to-blog">
+                    <a href="blog.html" class="back-link">← Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

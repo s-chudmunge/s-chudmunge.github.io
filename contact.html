@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sankalp Chudmunge</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .page-header h1 {
+            color: #2c5aa0;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(44, 90, 160, 0.1);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .email-icon {
+            background: #ea4335;
+        }
+        
+        .github-icon {
+            background: #333;
+        }
+        
+        .linkedin-icon {
+            background: #0077b5;
+        }
+        
+        .location-icon {
+            background: #4285f4;
+        }
+        
+        .phone-icon {
+            background: #34a853;
+        }
+        
+        .contact-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-card p {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .contact-link {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-link:hover {
+            color: #1a4480;
+            text-decoration: underline;
+        }
+        
+        .achievements-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .achievements-section h2 {
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .achievements-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .achievement-item {
+            text-align: center;
+        }
+        
+        .achievement-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c5aa0;
+            display: block;
+        }
+        
+        .achievement-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .achievements-list {
+                gap: 2rem;
+            }
+            
+            .contact-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Sankalp Chudmunge</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="research.html" class="nav-link">Research</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="publications.html" class="nav-link">Publications and talks</a>
+                    <a href="projects.html" class="nav-link">Computational Projects</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="contact-container">
+            <div style="margin-bottom: 2rem;">
+                <h1 style="color: #2c5aa0; font-size: 1.8rem; margin-bottom: 0.5rem;">Get In Touch</h1>
+                <p style="color: #6c757d; font-size: 1rem;">Feel free to reach out for collaborations, discussions about quantum physics, or just to say hello!</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon email-icon">
+                        📧
+                    </div>
+                    <h3>Email</h3>
+                    <p>Drop me a line anytime</p>
+                    <a href="mailto:csankalp21@gmail.com" class="contact-link">csankalp21@gmail.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon github-icon">
+                        🐙
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Check out my code and projects</p>
+                    <a href="https://github.com/s-chudmunge" target="_blank" class="contact-link">github.com/s-chudmunge</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon linkedin-icon">
+                        💼
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Let's connect professionally</p>
+                    <a href="#" class="contact-link">linkedin.com/in/sankalpchudmunge</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon location-icon">
+                        📍
+                    </div>
+                    <h3>Location</h3>
+                    <p>Based in beautiful India</p>
+                    <span class="contact-link">Maharashtra, India</span>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon phone-icon">
+                        📱
+                    </div>
+                    <h3>Phone</h3>
+                    <p>Call or text me</p>
+                    <a href="tel:+918766775227" class="contact-link">(+91) 8766775227</a>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h2>Academic Achievements</h2>
+                <div class="achievements-list">
+                    <div class="achievement-item">
+                        <span class="achievement-number">768</span>
+                        <div class="achievement-text">JAM-2022 AIR<br>(Top 1%)</div>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-number">98.5%</span>
+                        <div class="achievement-text">Percentile in<br>Aptitude Test</div>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-number">2024</span>
+                        <div class="achievement-text">M.Sc. Graduate<br>IIT Palakkad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
