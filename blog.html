@@ -6,23 +6,15 @@
     <title>Blog - Sankalp Chudmunge</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .blog-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
         .blog-post {
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid #e8e8e8;
             padding: 2rem 0;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
         }
         
         .blog-post:hover {
-            background-color: #f8f9fa;
-            margin: 0 -1rem;
-            padding: 2rem 1rem;
-            border-radius: 8px;
+            opacity: 0.7;
         }
         
         .blog-post:last-child {
@@ -30,15 +22,15 @@
         }
         
         .blog-post h3 {
-            color: #2c5aa0;
+            color: #1a1a1a;
             margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-            line-height: 1.3;
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.4;
         }
         
         .blog-meta {
-            color: #6c757d;
+            color: #666;
             font-size: 0.9rem;
             margin-bottom: 0.8rem;
             display: flex;
@@ -47,8 +39,8 @@
         }
         
         .blog-excerpt {
-            color: #495057;
-            line-height: 1.6;
+            color: #666;
+            line-height: 1.7;
             margin-bottom: 1rem;
             font-size: 1rem;
         }
@@ -60,31 +52,12 @@
         }
         
         .tag {
-            background: #e9ecef;
-            color: #495057;
+            background: transparent;
+            color: #666;
             padding: 0.2rem 0.6rem;
-            border-radius: 12px;
+            border: 1px solid #e8e8e8;
             font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-        }
-        
-        .page-header h1 {
-            color: #2c5aa0;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            color: #6c757d;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-weight: 400;
         }
     </style>
 </head>
@@ -109,114 +82,27 @@
     </header>
 
     <main class="main-content">
-        <div style="max-width: 800px; margin: 0 auto; padding: 2rem;">
-            <div style="margin-bottom: 2rem;">
-                <h1 style="color: #2c5aa0; font-size: 1.8rem; margin-bottom: 0.5rem;">Blog</h1>
-                <p style="color: #6c757d; font-size: 1rem;">Thoughts on computational physics, quantum systems, and research insights</p>
-            </div>
-
-            <div>
-                <article style="border-bottom: 1px solid #e9ecef; padding: 2rem 0; cursor: pointer; transition: background-color 0.2s ease;" onclick="window.location.href='blog-post-1.html'" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.margin='0 -1rem'; this.style.padding='2rem 1rem'; this.style.borderRadius='8px';" onmouseout="this.style.backgroundColor=''; this.style.margin=''; this.style.padding='2rem 0'; this.style.borderRadius='';">
-                    <h3 style="color: #2c5aa0; margin-bottom: 0.5rem; font-size: 1.4rem; font-weight: 600; line-height: 1.3;">Understanding Majorana Zero Modes: A Computational Perspective</h3>
-                    <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; gap: 1rem; align-items: center;">
-                        <span>October 15, 2025</span>
-                        <span>•</span>
-                        <span>8 min read</span>
+        <div class="content-container">
+            <div class="left-content">
+                <section>
+                    <h1>Blog</h1>
+                    <p>Thoughts on computational physics, quantum systems, and research insights</p>
+                    
+                    <div class="blog-post" onclick="location.href='blog-post-1.html'">
+                        <h3>Understanding Quantum Entanglement: A Beginner's Guide</h3>
+                        <div class="blog-meta">
+                            <span>Published on June 10, 2024</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Quantum entanglement is one of the most fascinating phenomena in physics. In this post, we explore its basics and implications for modern technology.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Quantum Physics</span>
+                            <span class="tag">Entanglement</span>
+                            <span class="tag">Beginner's Guide</span>
+                        </div>
                     </div>
-                    <p style="color: #495057; line-height: 1.6; margin-bottom: 1rem; font-size: 1rem;">
-                        Dive deep into the fascinating world of Majorana fermions and how computational methods help us understand these exotic quantum states. We explore the Jordan-Wigner transformation and numerical diagonalization techniques used in quantum many-body systems.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Quantum Physics</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Computational Physics</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Majorana Fermions</span>
-                    </div>
-                </article>
-
-                <article style="border-bottom: 1px solid #e9ecef; padding: 2rem 0; cursor: pointer; transition: background-color 0.2s ease;" onclick="window.location.href='blog-post-2.html'" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.margin='0 -1rem'; this.style.padding='2rem 1rem'; this.style.borderRadius='8px';" onmouseout="this.style.backgroundColor=''; this.style.margin=''; this.style.padding='2rem 0'; this.style.borderRadius='';">
-                    <h3 style="color: #2c5aa0; margin-bottom: 0.5rem; font-size: 1.4rem; font-weight: 600; line-height: 1.3;">Phase Diagrams and Topological Transitions in Quantum Ising Chains</h3>
-                    <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; gap: 1rem; align-items: center;">
-                        <span>October 10, 2025</span>
-                        <span>•</span>
-                        <span>6 min read</span>
-                    </div>
-                    <p style="color: #495057; line-height: 1.6; margin-bottom: 1rem; font-size: 1rem;">
-                        Exploring how three-spin interactions create rich phase diagrams with multiple critical points. Learn about winding numbers, topological invariants, and their role in characterizing quantum phase transitions.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Phase Transitions</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Topology</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Critical Points</span>
-                    </div>
-                </article>
-
-                <article style="border-bottom: 1px solid #e9ecef; padding: 2rem 0; cursor: pointer; transition: background-color 0.2s ease;" onclick="window.location.href='blog-post-3.html'" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.margin='0 -1rem'; this.style.padding='2rem 1rem'; this.style.borderRadius='8px';" onmouseout="this.style.backgroundColor=''; this.style.margin=''; this.style.padding='2rem 0'; this.style.borderRadius='';">
-                    <h3 style="color: #2c5aa0; margin-bottom: 0.5rem; font-size: 1.4rem; font-weight: 600; line-height: 1.3;">Numerical Methods for Quantum Many-Body Systems</h3>
-                    <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; gap: 1rem; align-items: center;">
-                        <span>October 5, 2025</span>
-                        <span>•</span>
-                        <span>10 min read</span>
-                    </div>
-                    <p style="color: #495057; line-height: 1.6; margin-bottom: 1rem; font-size: 1rem;">
-                        A comprehensive guide to computational techniques used in quantum physics research. From exact diagonalization to Bogoliubov-de Gennes transformations, discover the tools that power modern quantum simulations.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Numerical Methods</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Python</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Quantum Simulation</span>
-                    </div>
-                </article>
-
-                <article style="border-bottom: 1px solid #e9ecef; padding: 2rem 0; cursor: pointer; transition: background-color 0.2s ease;" onclick="window.location.href='blog-post-4.html'" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.margin='0 -1rem'; this.style.padding='2rem 1rem'; this.style.borderRadius='8px';" onmouseout="this.style.backgroundColor=''; this.style.margin=''; this.style.padding='2rem 0'; this.style.borderRadius='';">
-                    <h3 style="color: #2c5aa0; margin-bottom: 0.5rem; font-size: 1.4rem; font-weight: 600; line-height: 1.3;">From Physics to Production: Building Scalable Backend Systems</h3>
-                    <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; gap: 1rem; align-items: center;">
-                        <span>September 28, 2025</span>
-                        <span>•</span>
-                        <span>7 min read</span>
-                    </div>
-                    <p style="color: #495057; line-height: 1.6; margin-bottom: 1rem; font-size: 1rem;">
-                        How analytical thinking from physics research translates to software engineering. Lessons learned while building Menttor, a learning platform serving 1000+ users with sub-200ms response times.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Software Engineering</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">FastAPI</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Career Transition</span>
-                    </div>
-                </article>
-
-                <article style="border-bottom: 1px solid #e9ecef; padding: 2rem 0; cursor: pointer; transition: background-color 0.2s ease;" onclick="window.location.href='blog-post-5.html'" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.margin='0 -1rem'; this.style.padding='2rem 1rem'; this.style.borderRadius='8px';" onmouseout="this.style.backgroundColor=''; this.style.margin=''; this.style.padding='2rem 0'; this.style.borderRadius='';">
-                    <h3 style="color: #2c5aa0; margin-bottom: 0.5rem; font-size: 1.4rem; font-weight: 600; line-height: 1.3;">The Beauty of Symmetry Breaking in Quantum Systems</h3>
-                    <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; gap: 1rem; align-items: center;">
-                        <span>September 20, 2025</span>
-                        <span>•</span>
-                        <span>5 min read</span>
-                    </div>
-                    <p style="color: #495057; line-height: 1.6; margin-bottom: 1rem; font-size: 1rem;">
-                        Exploring how spontaneous symmetry breaking leads to fascinating phenomena in condensed matter physics. From the Ising model to topological phases, symmetry plays a crucial role in understanding quantum matter.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Symmetry</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Condensed Matter</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Theory</span>
-                    </div>
-                </article>
-
-                <article style="padding: 2rem 0; cursor: pointer; transition: background-color 0.2s ease;" onclick="window.location.href='blog-post-6.html'" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.margin='0 -1rem'; this.style.padding='2rem 1rem'; this.style.borderRadius='8px';" onmouseout="this.style.backgroundColor=''; this.style.margin=''; this.style.padding='2rem 0'; this.style.borderRadius='';">
-                    <h3 style="color: #2c5aa0; margin-bottom: 0.5rem; font-size: 1.4rem; font-weight: 600; line-height: 1.3;">Python for Physics: Best Practices and Tools</h3>
-                    <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; gap: 1rem; align-items: center;">
-                        <span>September 15, 2025</span>
-                        <span>•</span>
-                        <span>9 min read</span>
-                    </div>
-                    <p style="color: #495057; line-height: 1.6; margin-bottom: 1rem; font-size: 1rem;">
-                        A practical guide for physics students and researchers looking to leverage Python for computational work. Libraries, optimization techniques, and code organization strategies for scientific computing.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Python</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Scientific Computing</span>
-                        <span style="background: #e9ecef; color: #495057; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Best Practices</span>
-                    </div>
-                </article>
+                </section>
             </div>
         </div>
     </main>
