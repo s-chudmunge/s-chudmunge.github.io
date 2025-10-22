@@ -189,41 +189,23 @@
             <div class="slider-container">
                 <div class="slider">
                     <div class="slide-counter">
-                        <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
+                        <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
                     </div>
                     
                     <div class="slide active">
                         <img src="images/IMG_20240126_100534.jpg" alt="Gallery Image 1">
                     </div>
                     <div class="slide">
-                        <img src="images/IMG_20230701_141437.jpg" alt="Gallery Image 2">
+                        <img src="images/IMG-20210110-WA0004.jpg" alt="Gallery Image 2">
                     </div>
                     <div class="slide">
-                        <img src="images/IMG_20230127_192605.jpg" alt="Gallery Image 3">
+                        <img src="images/IMG-20250729-WA0005.jpg" alt="Gallery Image 3">
                     </div>
                     <div class="slide">
-                        <img src="images/IMG_20221023_114333.jpg" alt="Gallery Image 4">
+                        <img src="images/IMG-20240101-WA0066.jpg" alt="Gallery Image 4">
                     </div>
                     <div class="slide">
-                        <img src="images/IMG_20221018_152629.jpg" alt="Gallery Image 5">
-                    </div>
-                    <div class="slide">
-                        <img src="images/IMG-20210110-WA0004.jpg" alt="Gallery Image 6">
-                    </div>
-                    <div class="slide">
-                        <img src="images/IMG_20190126_134457.jpg" alt="Gallery Image 7">
-                    </div>
-                    <div class="slide">
-                        <img src="images/IMG_20180219_163445.jpg" alt="Gallery Image 8">
-                    </div>
-                    <div class="slide">
-                        <img src="images/IMG-20250729-WA0005.jpg" alt="Gallery Image 9">
-                    </div>
-                    <div class="slide">
-                        <img src="images/IMG-20240101-WA0066.jpg" alt="Gallery Image 10">
-                    </div>
-                    <div class="slide">
-                        <img src="images/d.JPG" alt="Gallery Image 11">
+                        <img src="images/d.JPG" alt="Gallery Image 5">
                     </div>
                     
                     <button class="slider-controls prev" onclick="changeSlide(-1)">❮</button>
@@ -236,12 +218,6 @@
                     <span class="dot" onclick="currentSlideIndex(3)"></span>
                     <span class="dot" onclick="currentSlideIndex(4)"></span>
                     <span class="dot" onclick="currentSlideIndex(5)"></span>
-                    <span class="dot" onclick="currentSlideIndex(6)"></span>
-                    <span class="dot" onclick="currentSlideIndex(7)"></span>
-                    <span class="dot" onclick="currentSlideIndex(8)"></span>
-                    <span class="dot" onclick="currentSlideIndex(9)"></span>
-                    <span class="dot" onclick="currentSlideIndex(10)"></span>
-                    <span class="dot" onclick="currentSlideIndex(11)"></span>
                 </div>
                 </section>
             </div>
@@ -250,7 +226,7 @@
 
     <script>
         let slideIndex = 1;
-        const totalSlides = 11;
+        const totalSlides = 5;
 
         function changeSlide(n) {
             showSlide(slideIndex += n);
