@@ -31,7 +31,112 @@
             <div class="left-content">
                 <section>
                     <h1>Computational Projects</h1>
-                    <p>Projects content coming soon...</p>
+                    <p><div class="container">
+        <h1>Sierpinski Triangle</h1>
+        <canvas id="canvas" width="600" height="520"></canvas>
+        <div class="controls">
+            <label for="depth">Recursion Depth:</label>
+            <input type="range" id="depth" min="0" max="8" value="5">
+            <span class="depth-value" id="depthValue">5</span>
+            <button id="animate">Animate</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const depthSlider = document.getElementById('depth');
+        const depthValue = document.getElementById('depthValue');
+        const animateBtn = document.getElementById('animate');
+        
+        let animating = false;
+        let animationId = null;
+
+        function drawTriangle(x1, y1, x2, y2, x3, y3) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y3);
+            ctx.closePath();
+            ctx.fillStyle = '#667eea';
+            ctx.fill();
+            ctx.strokeStyle = '#764ba2';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+
+        function sierpinski(x1, y1, x2, y2, x3, y3, depth) {
+            if (depth === 0) {
+                drawTriangle(x1, y1, x2, y2, x3, y3);
+            } else {
+                // Calculate midpoints
+                const mx1 = (x1 + x2) / 2;
+                const my1 = (y1 + y2) / 2;
+                const mx2 = (x2 + x3) / 2;
+                const my2 = (y2 + y3) / 2;
+                const mx3 = (x1 + x3) / 2;
+                const my3 = (y1 + y3) / 2;
+
+                // Recursively draw three smaller triangles
+                sierpinski(x1, y1, mx1, my1, mx3, my3, depth - 1);
+                sierpinski(mx1, my1, x2, y2, mx2, my2, depth - 1);
+                sierpinski(mx3, my3, mx2, my2, x3, y3, depth - 1);
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Define the main triangle vertices
+            const x1 = canvas.width / 2;
+            const y1 = 40;
+            const x2 = 50;
+            const y2 = canvas.height - 40;
+            const x3 = canvas.width - 50;
+            const y3 = canvas.height - 40;
+            
+            const depth = parseInt(depthSlider.value);
+            sierpinski(x1, y1, x2, y2, x3, y3, depth);
+        }
+
+        function animate() {
+            if (animating) {
+                animating = false;
+                animateBtn.textContent = 'Animate';
+                if (animationId) clearInterval(animationId);
+                return;
+            }
+
+            animating = true;
+            animateBtn.textContent = 'Stop';
+            let currentDepth = 0;
+            let increasing = true;
+
+            animationId = setInterval(() => {
+                depthSlider.value = currentDepth;
+                depthValue.textContent = currentDepth;
+                draw();
+
+                if (increasing) {
+                    currentDepth++;
+                    if (currentDepth > 7) increasing = false;
+                } else {
+                    currentDepth--;
+                    if (currentDepth < 0) increasing = true;
+                }
+            }, 600);
+        }
+
+        depthSlider.addEventListener('input', (e) => {
+            depthValue.textContent = e.target.value;
+            draw();
+        });
+
+        animateBtn.addEventListener('click', animate);
+
+        // Initial draw
+        draw();
+    </script></p>
                 </section>
             </div>
         </div>
